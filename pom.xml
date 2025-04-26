@@ -21,5 +21,11 @@
             <artifactId>selenium-chrome-driver</artifactId>
             <version>4.31.0</version>
         </dependency>
+        <!-- Maven -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.17.0</version>
+        </dependency>
     </dependencies>
 </project>
