@@ -1,6 +1,11 @@
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.locators.RelativeLocator;
+
+import java.util.List;
 
 public class SeleniumDemo {
     public static void main(String[] args) {
@@ -8,6 +13,20 @@ public class SeleniumDemo {
         WebDriver driver = new ChromeDriver();
         driver.get("https://practicetestautomation.com/practice-test-login/");
         //web element locators will be added here
+        WebElement usernameInputField = driver.findElement(By.id("username"));
+        WebElement passwordInputField = driver.findElement(By.name("password"));
+        WebElement submitButton = driver.findElement(By.className("btn"));
+
+        //This is how you interact with groups of similar elements on a page
+        List<WebElement>  inputFields = driver.findElements(By.tagName("input"));
+
+
+        WebElement linkTextLocator = driver.findElement(By.linkText("Practice Test Automation"));
+        WebElement partialLinkTextLocator = driver.findElement(By.partialLinkText("Test Automation"));
+
+        //using relative locator to find password input field
+        WebElement passwordFieldBelowUserName = driver.findElement(RelativeLocator.with(By.tagName("input")).below(By.id("username")));
+
 
         driver.quit();
     }
